@@ -6,7 +6,7 @@
 
 
   <div class="main">
-    
+      <NavigationComponent />
     <button @click="toggleDarkMode">
       toggle
     </button>
@@ -15,27 +15,23 @@
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-
+import NavigationComponent from './components/NavigationComponent.vue'
 export default defineComponent({
 
-  setup(){
-    const theme = ref('')
-    const targetTheme = ref('')
+  // setup(){
+  //   const theme = ref('')
+  //   const targetTheme = ref('')
 
-    return {theme, targetTheme}
+  //   return {theme, targetTheme}
+  // },
+  components: {
+    NavigationComponent
   },
-
   created(){
 
     if(!localStorage.getItem('theme')) {
       localStorage.setItem('theme', 'dark')
     }
-
-    // this.theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : '');
-
-    // if(this.theme) {
-    //   document.documentElement.setAttribute('data-theme', this.theme)
-    // }
 
   },
   methods: {
@@ -56,20 +52,16 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-:root {
-  /* Your default theme */
-  --background: white;
-  --foreground: black;
-}
-[data-theme='light'] {
-  --background: black;
-  --foreground: white;
-}
-[data-theme='dark'] {
-  --background: green;
-  --foreground: white;
-}
+@import './assets/sass/variables.scss';
+@import './assets/sass/normalize.scss';
+@import './assets/sass/globals.scss';
 body{
-  background: var(--background);
+  background-color: var(--background);
+  color: var(--body-color);
+}
+
+.container{
+  max-width:1140px;
+  margin: 0 auto;
 }
 </style>

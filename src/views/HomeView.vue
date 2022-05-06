@@ -23,9 +23,9 @@ export default defineComponent({
     const data = ref(Object)
     return { API_BASE, data }
   },
-  mounted() {
-    this.getData()
-  },
+  // mounted() {
+  //   this.getData()
+  // },
   methods: {
     async getData(){
       this.data = await axios.get(this.API_BASE+'/farmers')
