@@ -6,7 +6,7 @@
 
 
   <div class="main">
-    
+      <NavigationComponent />
     <button @click="toggleDarkMode">
       toggle
     </button>
@@ -15,7 +15,7 @@
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-
+import NavigationComponent from './components/NavigationComponent.vue'
 export default defineComponent({
 
   // setup(){
@@ -24,7 +24,9 @@ export default defineComponent({
 
   //   return {theme, targetTheme}
   // },
-
+  components: {
+    NavigationComponent
+  },
   created(){
 
     if(!localStorage.getItem('theme')) {
@@ -50,48 +52,16 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-:root {
-  // default theme
-  --background: #1A1D21;
-  --body-color: white;
-  --gray: #A8A8A8;
-  --gray-text: #A8A8A8;
-  --light-gray: #CED4D4;
-  --light-gray-text: #CED4D4;
-  --success: #13C54B;
-  --warning: #E8BC52;
-  --info: #2886F6;
-  --card-background-color: #212529;
-  --white: white;
-}
-[data-theme='light'] {
-  --background: white;
-  --body-color: #212529;
-  --gray: #A8A8A8;
-  --gray-text: #A8A8A8;
-  --light-gray: #CED4D4;
-  --light-gray-text: #CED4D4;
-  --success: #13C54B;
-  --warning: #E8BC52;
-  --info: #2886F6;
-  --card-background-color: #212529;
-  --white: white;
-}
-[data-theme='dark'] {
-  --background: #1A1D21;
-  --body-color: white;
-  --gray: #212529;
-  --gray-text: #212529;
-  --light-gray: #FCFCFC;
-  --light-gray-text: #808D9B;
-  --success: #13C54B;
-  --warning: #E8BC52;
-  --info: #2886F6;
-  --card-background-color: #FCFCFC;
-  --white: white;
-}
+@import './assets/sass/variables.scss';
+@import './assets/sass/normalize.scss';
+@import './assets/sass/globals.scss';
 body{
   background-color: var(--background);
   color: var(--body-color);
+}
+
+.container{
+  max-width:1140px;
+  margin: 0 auto;
 }
 </style>

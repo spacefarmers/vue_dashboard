@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+
+//Buttons
+.btn{
+  font-weight:600;
+  font-size:1.23rem;
+  height:auto;
+  border:none;
+  border-radius:5px;
+  padding:.5rem .5rem;
+  font-weight:700;
+  cursor:pointer;
+  &--small{
+    font-size:.8rem;
+    height:30px;
+  }
+  &--primary{
+    color:var(--white);
+    background-color:var(--info);
+    &:hover{
+      background-color: var(--info-light);
+    }
+  }
+}
+
+
+
