@@ -14,6 +14,7 @@
     <div class="container">
       <router-view />
     </div>
+    
   </div>
 </template>
 <script lang="ts">
