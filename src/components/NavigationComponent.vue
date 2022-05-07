@@ -24,6 +24,11 @@
         </ul>
       </div>
       <div class="nav__actions">
+        <i
+          class="theme-toggle"
+          @click="$emit('toggleDarkMode')">
+          <Brightness6 />
+        </i>
         <button class="btn btn--small btn--primary">Join</button>
       </div>
     </div>
@@ -32,9 +37,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-
+import Brightness6 from 'vue-material-design-icons/Brightness6.vue';
 export default defineComponent({
   name: 'NavigationComponent',
+  components:{
+    Brightness6
+  }
 
 });
 </script>
@@ -82,5 +90,10 @@ export default defineComponent({
     align-items:center;
 
   }
+}
+
+.theme-toggle{
+  margin-right:1rem;
+  cursor:pointer;
 }
 </style>

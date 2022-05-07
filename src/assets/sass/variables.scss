@@ -11,6 +11,7 @@
   --info: #2886F6;
   --info-light: #539df5;
   --card-background-color: #212529;
+  ---background-color: #212529;
   --white: white;
 }
 [data-theme='light'] {
@@ -25,6 +26,7 @@
   --info: #2886F6;
   --info-light: #539df5;
   --card-background-color: #212529;
+  ---background-color: #212529;
   --white: white;
 }
 [data-theme='dark'] {
@@ -39,5 +41,6 @@
   --info: #2886F6;
   --info-light: #539df5;
   --card-background-color: #FCFCFC;
+  ---background-color: #FCFCFC;
   --white: white;
 }

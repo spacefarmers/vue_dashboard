@@ -6,11 +6,14 @@
 
 
   <div class="main">
-      <NavigationComponent />
-    <button @click="toggleDarkMode">
-      toggle
-    </button>
-    <router-view/>
+    
+    <NavigationComponent 
+      @toggleDarkMode="toggleDarkMode"
+    />
+
+    <div class="container">
+      <router-view />
+    </div>
   </div>
 </template>
 <script lang="ts">
